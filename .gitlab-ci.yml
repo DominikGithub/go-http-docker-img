@@ -10,7 +10,7 @@ build_golang_cli:
   stage: build
   #image: golang:1.15.8-buster
   before_script:
-    - apk update && apk add -y go
+    - apk update && apk add go
     - go version
     #- go get -d github.com/c-bata/go-prompt
     - docker login -u ${DOCKERHUB_NAMESPACE} -p ${DOCKERHUB_ACCESSTOKEN}
