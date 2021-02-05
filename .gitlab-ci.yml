@@ -18,7 +18,7 @@ build_golang_cli:
     - develop tag ${DOCKERHUB_NAMESPACE}
     - docker tag go_webserver ${DOCKERHUB_NAMESPACE}/go_webserver
     - docker push ${DOCKERHUB_NAMESPACE}/go_webserver
-  tag:
+  tags:
     - hetzner
   only: 
     - master
