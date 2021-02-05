@@ -1,5 +1,7 @@
 # go-http-docker-img
 
+[![pipeline status](https://gitlab.com/DominikGitlab/go-http-docker-img/badges/master/pipeline.svg)](https://gitlab.com/DominikGitlab/go-http-docker-img/-/commits/master)
+
 Golang HTTP web backend docker image pushed as docker image from the build pipeline to a docker registry^.
 
 ## Start  
