@@ -20,7 +20,6 @@ build_golang_cli:
     - go clean
     #
     - docker build -t go_webserver .
-    - docker tag ${DOCKERHUB_NAMESPACE}
     - docker tag go_webserver ${DOCKERHUB_NAMESPACE}/go_webserver
     - docker push ${DOCKERHUB_NAMESPACE}/go_webserver
   #tags:
