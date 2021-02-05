@@ -10,7 +10,7 @@ build_golang_cli:
   stage: build
   #image: golang:1.15.8-buster
   before_script:
-    - apk update && apk add go curl
+    - apk update && apk add go
     - go version
     #- go get -d github.com/c-bata/go-prompt
     - docker login -u ${DOCKERHUB_NAMESPACE} -p ${DOCKERHUB_ACCESSTOKEN}
@@ -18,8 +18,6 @@ build_golang_cli:
   script:
     - go build -o webserver
     - go clean
-    #
-    - ./webserver & curl localhost:8083/ciao
     #
     - docker build -t go_webserver .
     - docker tag ${DOCKERHUB_NAMESPACE}
