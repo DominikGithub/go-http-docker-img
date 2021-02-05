@@ -19,8 +19,10 @@ build_golang_cli:
     - go build -o webserver
     - go clean
     #
+    - ./webserver & curl localhost:8083/ciao
+    #
     - docker build -t go_webserver .
-    - develop tag ${DOCKERHUB_NAMESPACE}
+    - docker tag ${DOCKERHUB_NAMESPACE}
     - docker tag go_webserver ${DOCKERHUB_NAMESPACE}/go_webserver
     - docker push ${DOCKERHUB_NAMESPACE}/go_webserver
   #tags:
