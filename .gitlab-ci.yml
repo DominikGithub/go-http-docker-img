@@ -1,3 +1,8 @@
+image: docker:20.10.3-dind
+
+services:
+  - docker:dind
+
 stages:
   - build
 
@@ -5,7 +10,7 @@ build_golang_cli:
   stage: build
   #image: golang:1.15.8-buster
   before_script:
-    - apt-get update && apt-get install -y git docker go
+    - apt-get update && apt-get install -y docker go
     - go version
     #- go get -d github.com/c-bata/go-prompt
     - docker login -u ${DOCKERHUB_NAMESPACE} -p ${DOCKERHUB_ACCESSTOKEN}
